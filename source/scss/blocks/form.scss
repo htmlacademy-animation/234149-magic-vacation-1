@@ -43,6 +43,7 @@
   border: 0;
   border-radius: 3rem;
   outline: none;
+  animation: reveal-from-right-to-left 0.5s forwards ease;
 
   &:focus {
     border: 1px solid $c-purple;
@@ -144,5 +145,14 @@
     @media (max-width: $mobile) and (orientation: landscape) {
       width: calc(100% - 5rem);
     }
+  }
+}
+
+@keyframes reveal-from-right-to-left {
+  0% {
+    clip-path: inset(0 0 0 100%);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
   }
 }
