@@ -17,6 +17,8 @@
   height: 4rem;
   color: $c-dark;
   border-radius: 50%;
+  transition: 0.35s all ease;
+
 
   @media (max-width: $tablet) and (orientation: portrait) {
     display: none;
@@ -140,11 +142,27 @@
   .social-block--active & {
     opacity: 1;
     pointer-events: auto;
+    li {
+      transform: translateY(0);
+      opacity: 1;
+    }
   }
 
   li {
     flex: none;
     margin-bottom: 0.5rem;
+    transform: translateY(10px);
+    opacity: 0;
+    transition: 0.35s all ease;
+    &:first-of-type {
+      transition-delay: 0s;
+    }
+    &:nth-of-type(2) {
+      transition-delay: 0.05s;
+    }
+    &:last-of-type {
+      transition-delay: 0.15s;
+    }
 
     @media (min-width: $stop-scaling) {
       margin-bottom: 5px;
@@ -168,6 +186,7 @@
   color: $c-light;
   border: 2px solid transparent;
   border-radius: 50%;
+  transition: 0.35s all ease;
 
   @media (min-width: $stop-scaling) {
     width: 40px;

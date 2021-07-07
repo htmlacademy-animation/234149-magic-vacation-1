@@ -18,6 +18,10 @@
   flex-direction: column;
   padding: 14.6rem 4rem 10rem 9.7rem;
   height: auto;
+  animation: fade-in-from-right-to-left 0.5s 0s ease forwards;
+  &:nth-of-type(2) {
+    animation-delay: 0.2s;
+  }
 
   @media (min-width: $stop-scaling) {
     padding: 146px 40px 100px 97px;
@@ -274,5 +278,16 @@
       height: 0.4rem;
       background-color: $c-light;
     }
+  }
+}
+
+@keyframes fade-in-from-right-to-left {
+  0% {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
